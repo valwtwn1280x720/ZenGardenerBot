@@ -15,23 +15,23 @@ class ZenGardenBot:
         self.BotCM = CajaMusical()
         self.BotCC = CoinCollecter()
 
-        #variable that confirms if the loop runs (=1) or not (=0)
-        self.running_loop = 0
+        #variable that confirms if the loop runs or not
+        self.is_running_loop = False
 
         #Pause time between the bots and CC (to be added to the options panel)
         self.pause_time = 0.8
 
     #main loop
     def gardenloop(self):
-        while self.running_loop == 1:
+        while self.is_running_loop:
             print("-----------------------------------")
             print("-----------------------------------")
             self.BotR.regar() #first one on execution
             self.BotF.fumigar() # second one
             self.BotCM.poner_musica() #third one
             time.sleep(0.3)
-            #checks if runnign_loop was changed for it to break
-            if self.running_loop == 0:
+            #checks if is_runnign_loop was changed for it to break
+            if self.is_running_loop is not True:
                 break
             self.BotCC.collect() #fourth one with his many attemps
             time.sleep(self.pause_time) #pause time between 
