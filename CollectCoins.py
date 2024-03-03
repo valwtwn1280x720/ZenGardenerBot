@@ -2,11 +2,15 @@ import pyautogui as pag
 from funcpvz import *
 import time
 
+#Create the class coincollecter
 class CoinCollecter:
     def __init__(self) -> None:
         
         #Defino las rutas con las imagenes de la moneda de 10 de Plants vs Zombies
         #En diferentes instancias de su movimiento en una lista
+
+        #Define the routes with the multiple 10 coin images from PvZ
+        #In different instances of it's movement
 
         self.coin_10_rutas = [
             r"C:\Users\usuario\Desktop\Thingsss\ZenGardenerBot\images\silver_coin\one_.png",
@@ -16,21 +20,26 @@ class CoinCollecter:
         ]
         
         #Intentos que tiene el bot para encontrar monedas
+        #Number of tries that the bot has to find coins in the screen
         self.coin_tries = 5
-        
+
+    #Main function to collect
     def collect(self):
+        #for loop with the number of tries
         for c in range(self.coin_tries):
             #Crea la variable result que almacena la posición de alguna de las imagenes que encuentre
+            #Creates the variable result that contains the position of any of the images it founds
             result = reconocer_coins(self.coin_10_rutas)
     
-            #Busca si result es distinto de None
+            #Busca si result es distinto de None // Search if result isn't None
             if result != None:
-                #Si es distinto muestra la posición en consola
+                #Si es distinto muestra la posición en consola // If isn't None prints the position 
                 print(f"Moneda Encontrada: {result}")
-                #se mueve y clickea
+                #se mueve y clickea // moves to it and click it
                 moverse_posicion(result,clicar="si")
             else:
-                #Muestra "No se puede ver" en consola para mas claridad al usuario
+                #Muestra "No hay/No veo monedas" en consola para mas claridad al usuario
+                #Prints "There isn't/Can't see coins" in the console for more clarity
                 print(f"{c+1}. No hay/No veo monedas")
                 #Si result no es distinto de None, pasa a la siguiente vuelta
                 pass
