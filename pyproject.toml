@@ -1,10 +1,6 @@
-[tool.poetry]
+[project]
 name = "ZenGardenerBot"
 version = "0.1.0"
 description = "Bot for Zen garden in PvZ using customtkinter and pyautogui"
 authors = ["Valwntwn <lautarovillegas75@gmail.com>"]
-
-[tool.poetry.dependencies]
-python = "^3.11.2"
-pyautogui = "^0.9.54"
-customtkinter = "^5.2.2"
+dependencies = ["pyautogui==0.9.54", "customtkinter==5.2.2"]
