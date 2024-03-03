@@ -11,8 +11,8 @@ class BotWin(CTk):
     def __init__(self, mainbot):
         super().__init__()
         self.mainbot = mainbot
-        self.options_panel = None
-        self.bot_isrunning = False
+        self.options_panel = None #Didn't know if it was necessary
+        self.bot_isrunning = False #Controls the state of the bot (ZBG)
         self.protocol("WM_DELETE_WINDOW", self.on_closing)
         
         self.geometry("480x360")
@@ -22,10 +22,10 @@ class BotWin(CTk):
         self.iconbitmap(self.icon)
         
         #frames
-        self.intro_Frame = CTkFrame(self)
+        self.intro_Frame = CTkFrame(self) #it contains the bot's name and the instrucctions
         self.intro_Frame.pack(side=TOP)
         
-        self.intro_buttons_Frame = CTkFrame(self)
+        self.intro_buttons_Frame = CTkFrame(self) #Cointains Start/Stop button and the options one
         self.intro_buttons_Frame.pack(side=BOTTOM)
         
         #labels
@@ -40,12 +40,14 @@ las oportunidades de CoinCollecter, en cuanto
 tiempo quieres que el bot se ejecute, etc. \n
 3_. Una vez todo listo, dale a comenzar, con PvZ
 ya abierto en el jardin Zen'''
-        
+
+        #Name
         self.intro_label = CTkLabel(self.intro_Frame,text="Zen Gardener",
                                     font=("Arial",32,"bold","underline"),
                                     text_color="light green")
         self.intro_label.pack(pady=10,padx=10,side="top")
-        
+
+        #Instrucctions
         self.instrucciones_label = CTkLabel(self.intro_Frame, text=self.instrucciones,
                                             anchor=W,font=("Calibri",16))
         self.instrucciones_label.pack(side=LEFT,pady=7)
@@ -61,6 +63,7 @@ ya abierto en el jardin Zen'''
 
     #Starts the loop from MainBot (solution given by chatgpt, didn't know how to do it)
     def start_botloop(self):
+        #Creates a Thread for the loop to run simultaneously with the GUI
         self.botloop_thread = threading.Thread(target=self.mainbot.gardenloop)
         self.botloop_thread.start()
         
@@ -70,7 +73,7 @@ ya abierto en el jardin Zen'''
         if self.bot_isrunning == False:
             self.bot_isrunning = True
             
-            self.start_stop()
+            self.start_stop() #Calls start_stop
             
         else:
             self.bot_isrunning = False
@@ -89,6 +92,7 @@ ya abierto en el jardin Zen'''
             self.start_stop_button.after(100, change)
             #lo activa si no se ejecuta el bot // activates it if the bot is not running
             self.options_button.configure(state="normal")
+            
     #if bot_isrunning is true it sets to 1 mainbot.running_loop for that loop to start    
     def start_stop(self):
         if self.bot_isrunning == True:
@@ -96,12 +100,14 @@ ya abierto en el jardin Zen'''
             self.start_botloop()
         else:
             self.mainbot.running_loop = 0
+            
     #Opens the option panel if the bot isn't running    
     def open_options(self):
         if self.bot_isrunning == False:
             self.options_panel = self.OptionWin(master=self,botcc=self.mainbot.BotCC)
         else:
             pass
+            
     #This exists because before it if you close the main window without stopping the loop it would be still running    
     def on_closing(self):
         self.mainbot.running_loop = 0
