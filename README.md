@@ -4,3 +4,8 @@ BotGUI is the one at opening the whole thing, it isnt complete, but is functiona
 (ALL THE IMAGES DIRECTORY MUST BE CHANGED) I don't know how to write it so it "doesn't matter"
 
 Also, first time sharing code i dont know how to do this
+
+Things that I wanted to add but didn't for now
+- fertilize plants automatically
+- buy things automatically if needed and could afford
+- CoinCollecter to collect 50 coins also
