@@ -18,7 +18,7 @@ class BotWin(CTk):
         self.geometry("480x360")
         self.title("Zen Gardener")
         self.icon = r"C:\Users\usuario\Desktop\Thingsss\ZenGardenerBot\images\icon_gui.ico"
-        self.config_ico = r""
+        self.config_ico = r"" #useless, can't remember (I think it was the icon for the options panel)
         self.iconbitmap(self.icon)
         
         #frames
