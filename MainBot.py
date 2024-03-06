@@ -5,6 +5,7 @@ from Regar import Regador
 from CollectCoins import CoinCollecter
 from Fumigar import Fumigador
 from CajadeMusica import CajaMusical
+from Fertilizer import Fertilizador
 
 #Creates the class that cointains all the other bots
 class ZenGardenBot:
@@ -14,6 +15,7 @@ class ZenGardenBot:
         self.BotF = Fumigador()
         self.BotCM = CajaMusical()
         self.BotCC = CoinCollecter()
+        self.BotFer = Fertilizador()
 
         #variable that confirms if the loop runs or not
         self.is_running_loop = False
@@ -29,6 +31,7 @@ class ZenGardenBot:
             self.BotR.regar() #first one on execution
             self.BotF.fumigar() # second one
             self.BotCM.poner_musica() #third one
+            self.BotFer.fertilize()
             time.sleep(0.3)
             #checks if is_runnign_loop was changed for it to break
             if self.is_running_loop is not True:
