@@ -13,10 +13,10 @@ class CoinCollecter:
         #In different instances of it's movement
 
         self.coin_10_rutas = [
-            r"C:\Users\usuario\Desktop\Thingsss\ZenGardenerBot\images\silver_coin\one_.png",
-            r"C:\Users\usuario\Desktop\Thingsss\ZenGardenerBot\images\silver_coin\three_.png",
-            r"C:\Users\usuario\Desktop\Thingsss\ZenGardenerBot\images\silver_coin\four_.png",
-            r"C:\Users\usuario\Desktop\Thingsss\ZenGardenerBot\images\silver_coin\five_.png"
+            r"images\silver_coin\one_.png",
+            r"images\silver_coin\three_.png",
+            r"images\silver_coin\four_.png",
+            r"images\silver_coin\five_.png"
         ]
         
         #Intentos que tiene el bot para encontrar monedas
