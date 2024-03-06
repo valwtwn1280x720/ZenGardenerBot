@@ -6,8 +6,8 @@ class CajaMusical:
     def __init__(self) -> None:
         
         #definicion de rutas // routes definition
-        self.ruta_musica = r"C:\Users\usuario\Desktop\Thingsss\ZenGardenerBot\images\music_plant.png"
-        self.ruta_cajamusica = r"C:\Users\usuario\Desktop\Thingsss\ZenGardenerBot\images\music_box.png"
+        self.ruta_musica = r"images\music_plant.png"
+        self.ruta_cajamusica = r"images\music_box.png"
         
     #Agarrar la caja // Grab the musicbox
     def grab_caja(self):
