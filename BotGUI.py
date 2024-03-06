@@ -130,12 +130,10 @@ ya abierto en el jardin Zen'''
         #Convert bot_isrunning to true if false and vice versa
         if self.bot_isrunning == False:
             self.bot_isrunning = True
-            
             self.start_stop() #Calls start_stop
             
         else:
             self.bot_isrunning = False
-            
             self.start_stop()
             
         # Si está corriendo, establece el botón a rojo con el texto "Detener"
@@ -143,13 +141,11 @@ ya abierto en el jardin Zen'''
         if self.bot_isrunning:
             change = lambda: self.start_stop_button.configure(text="Detener",fg_color="Red")
             self.start_stop_button.after(100, change)
-            
             #desactiva el boton de opciones // deactivate the options button
             self.options_button.configure(state="disabled")
         else:
             change = lambda: self.start_stop_button.configure(text="Comenzar",fg_color="Green")
             self.start_stop_button.after(100, change)
-            
             #lo activa si no se ejecuta el bot // activates it if the bot is not running
             self.options_button.configure(state="normal")
             
@@ -163,8 +159,7 @@ ya abierto en el jardin Zen'''
             
     #Opens the option panel if the bot isn't running    
     def open_options(self):
-        if self.bot_isrunning is False:
-            self.options_panel = OptionWin(master=self,botcc=self.mainbot.BotCC)
+        self.options_panel = OptionWin(master=self,botcc=self.mainbot.BotCC)
             
     #This exists because before it if you close the main window without stopping the loop it would be still running    
     def on_closing(self):
