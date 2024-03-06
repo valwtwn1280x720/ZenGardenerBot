@@ -6,8 +6,8 @@ class Fumigador:
     def __init__(self) -> None:
         
         #Definicion de rutas // Routes definition
-        self.ruta_fumigar_planta = r"C:\Users\usuario\Desktop\Thingsss\ZenGardenerBot\images\fumigate_plant.png"
-        self.ruta_fumigar = r"C:\Users\usuario\Desktop\Thingsss\ZenGardenerBot\images\fumigate.png"
+        self.ruta_fumigar_planta = r"images\fumigate_plant.png"
+        self.ruta_fumigar = r"images\fumigate.png"
         
     #Funcion para agarrar el fumigador
     #Function for grabbing the pesticide
