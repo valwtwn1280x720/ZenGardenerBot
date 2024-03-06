@@ -11,6 +11,6 @@ BotGUI is the one at opening the whole thing, it isnt complete, but is functiona
 Also, first time sharing code i dont know how to do this
 
 Things that I wanted to add but didn't for now
-- fertilize plants automatically
+- fertilize plants automatically [already done]
 - buy things automatically if needed and could afford
 - CoinCollecter to collect 50 coins also
