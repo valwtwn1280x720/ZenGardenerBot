@@ -41,23 +41,17 @@ class OptionWin(CTkToplevel):
         self.oppty_cc_label.grid(row=0,column=0,padx=5,pady=15)
         
         #lista de opciones/oportunidades // opportunities/options list
-        self.oppty_nums = [5,10,15,20]
-        self.oppty_nums_as_str = ["5","10","15","20"]
-        self.oppty_var = StringVar(self.options_frame,self.oppty_nums_as_str[0])
+        self.oppty_nums = ["5","10","15","20"]
         #menu para cambiar / menu to change it
-        self.oppty_cc_menu = CTkOptionMenu(self.options_frame,values=self.oppty_nums_as_str,
-                                    variable=self.oppty_var,fg_color="Grey",
-                                    button_color="Black",width=50,height=20)
+        self.oppty_cc_menu = CTkOptionMenu(self.options_frame, values=self.oppty_nums,
+                                    fg_color="Grey", button_color="Black", width=50, height=20)
         self.oppty_cc_menu.grid(row=0,column=1,padx=5)
             
     #Funciones // Functions
     #applies the option selected above
     def oppty_cc_save(self):
         oppty_n = self.oppty_cc_menu.get()
-        #don't know how to explain this, it just made sense to me
-        for number in self.oppty_nums:
-            if int(oppty_n) == number:
-                self.botcc.coin_tries = number
+        self.botcc.coin_tries = int(oppty_n)
 
     #applies all the changes (only 1 option for now) and closes the options panel
     def aplicar(self):
