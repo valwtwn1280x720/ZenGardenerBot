@@ -7,8 +7,8 @@ class Regador:
         
         #Se define las rutas de las imagenes necesarias a encontrar
         #Defines the images routes
-        self.ruta_water = r"C:\Users\usuario\Desktop\Thingsss\ZenGardenerBot\images\water.png"
-        self.ruta_regadera = r"C:\Users\usuario\Desktop\Thingsss\ZenGardenerBot\images\regadera.png"
+        self.ruta_water = r"images\water.png"
+        self.ruta_regadera = r"images\regadera.png"
     
     #Funcion para agarrar la regadera / grab the watering can
     def grab_regadera(self):
