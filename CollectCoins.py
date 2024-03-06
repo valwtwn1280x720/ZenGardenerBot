@@ -34,12 +34,9 @@ class CoinCollecter:
             #Busca si result es distinto de None // Search if result isn't None
             if result != None:
                 #Si es distinto muestra la posición en consola // If isn't None prints the position 
-                print(f"Moneda Encontrada: {result}")
-                #se mueve y clickea // moves to it and click it
+                print(f"Moneda Encontrada: {result}")
                 moverse_posicion(result,clicar="si")
-            else:
-                #Muestra "No hay/No veo monedas" en consola para mas claridad al usuario
-                #Prints "There isn't/Can't see coins" in the console for more clarity
+            else:
                 print(f"{c+1}. No hay/No veo monedas")
-                #Si result no es distinto de None, pasa a la siguiente vuelta
+                
                 pass
