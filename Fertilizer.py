@@ -18,3 +18,6 @@ class Fertilizador:
         if need_fert:
             self.grab_fertilizer()
             moverse_posicion(need_fert,clicar="si")
+        else:
+            print("No se necesita fertilizante")
+            print("<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>")
